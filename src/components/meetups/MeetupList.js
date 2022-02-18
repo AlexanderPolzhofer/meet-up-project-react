@@ -9,11 +9,7 @@ function MeetupList({ ...props }) {
     return (
         <ul className={classes.list}>
             {meetups.map(meetup => <MeetupItem
-                key={meetup.id}
-                title={meetup.title}
-                imageUrl={meetup.imageUrl}
-                description={meetup.description}
-                address={meetup.address}
+               meetup={meetup} key={meetup.id}
             />)}
         </ul>
     );

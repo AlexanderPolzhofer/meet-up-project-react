@@ -4,7 +4,10 @@ import classes from './MeetupItem.module.css';
 
 function MeetupItem({ ...props }) {
 
-    const { title, address, description, imageUrl } = props;
+    const { meetup } = props;
+
+    const { title, address, description, imageUrl } = meetup;
+
 
     return (
         <li className={classes.item}>
