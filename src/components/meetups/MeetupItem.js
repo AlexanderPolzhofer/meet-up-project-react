@@ -7,13 +7,13 @@ function MeetupItem({ ...props }) {
 
     const { meetup } = props;
 
-    const { title, address, description, imageUrl } = meetup;
+    const { title, address, description, image } = meetup;
 
     return (
         <Card>
             <li className={classes.item}>
                 <div>
-                    <img src={imageUrl} alt='logo' className={classes.image} />
+                    <img src={image} alt='logo' className={classes.image} />
                 </div>
                 <div className={classes.content}>
                     <h3>{title}</h3>

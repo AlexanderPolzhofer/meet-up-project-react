@@ -1,20 +1,26 @@
 import React from 'react';
-import NewMeetupForm from '../components/meetups/NewMeetupForm';
 
+import { useNavigate } from 'react-router-dom';
+
+import NewMeetupForm from '../components/meetups/NewMeetupForm';
 
 function NewMeetup() {
 
     const url = 'https://meetup-project-react-8d99a-default-rtdb.europe-west1.firebasedatabase.app/meetups.json';
+    const navigate = useNavigate();
 
     const handleAddMeetup = (meetupData) => {
 
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(meetupData),
-            headers:{
+            headers: {
                 'Content-Type': 'application/json'
             }
-        });
+        })
+            .then(() => {
+                navigate('/');
+            });
     }
 
     return (
